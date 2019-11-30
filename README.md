@@ -1,4 +1,4 @@
-# Python_Network_Scanner
+# Python_Port_Scanner
 Python Script to scanning target host in different ports.
 
 # To run hit command :
