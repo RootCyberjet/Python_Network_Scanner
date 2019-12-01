@@ -1,5 +1,5 @@
 #****************************************************************
-#                   NAME -SHIBA BISWAS
+#                   NAME - SHIBA BISWAS
 #                   DESIGNATION - STUDENT
 #                   EMAIL - shibabiswas1111@gmail.com
 #                   INDIA
@@ -30,12 +30,14 @@ def sock_creation(target_host1, target_port1):
         try: 
             s.connect((target_host1, int(target_port1)))
             service = socket.getservbyport(int(target_port1),'tcp')
-            print(str(target_port1)+"/TCP       open        "+service)
+            p = [ str(target_port1)+"/TCP", "open", service]
+            print('{:>8} {:>8} {:>16}'.format(*p))
             s.close()
         except:
             service = "NOT AVAILABLE"
-            print(str(target_port1)+"/TCP       closed      "+service)
-
+            p = [ str(target_port1)+"/TCP", "closed", service]
+            print('{:>8} {:>8} {:>16}'.format(*p))
+            
 #****************************************************************
 
 def port_scan(target_host,target_ports):
@@ -49,7 +51,7 @@ def port_scan(target_host,target_ports):
     print("----------------------------------------------")
     print("For PORT scanning of : "+target_IP+'('+target_host+')')
     print("----------------------------------------------")
-    print("   PORT       STATUS     SERVICE     ")
+    print("    PORT     STATUS        SERVICE ")
     print("----------------------------------------------")
     for port in target_ports:
         sock_creation(target_IP,port)
